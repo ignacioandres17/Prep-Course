@@ -57,14 +57,8 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  var a = "";
-  for (var i = 0; i < palabras.length; i++){
-    if(i === palabras.length - 1){
-      a = a + palabras[i];
-      return a;
-    }
-    a = a + palabras[i] + " ";
-  } return a;
+  var string = palabras.join(" ");
+  return string;
 }
 
 
@@ -159,7 +153,7 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
 var num = n.toString()
-if(num.charAt(0) ==="9"){
+if(num[0] ==="9"){
   return true
 } return false 
 }
@@ -190,7 +184,7 @@ function mesesDelAño(array) {
       nuevoArray.push(array[i]);
     }
   } if(nuevoArray.length < 3){
-    return "No se encontraron los meses perdidos";
+    return "No se encontraron los meses pedidos";
   } else{
     return nuevoArray;
   }
