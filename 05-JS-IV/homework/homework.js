@@ -10,7 +10,7 @@ function crearGato (nombre, edad) {
     nombre: nombre,
     edad: edad,
     meow: function(){
-      return "meow";
+      return "Meow!";
     }
   }; return nuevoObjeto;
 }
@@ -148,8 +148,11 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
   producto.calcularPrecioDescuento = function(){
-    return this.precio - (this.precio * this.porcentajeDeDescuento);
-  }; return producto;
+    var descuento = producto.precio * producto.porcentajeDeDescuento;
+    var nuevoPrecio = producto.precio - descuento;
+    return nuevoPrecio;
+  }
+  return producto
 }
 
 // No modificar nada debajo de esta línea
