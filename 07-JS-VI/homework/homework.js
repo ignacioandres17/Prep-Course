@@ -24,20 +24,32 @@ function sumarArray(numeros, cb) {
   // Suma todos los números enteros (int/integers) de un array ("numeros")
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
-  //Tu código:
+  //Tu código: 
+  
   var sumaTotal = numeros.reduce(function(acc, curr){
     return acc + curr;
   },0);
   cb(sumaTotal);
   }
 
+  //var sumar = 0;
+  //numeros.forEach(elementoDelArreglo => {
+    //sumar = sumar + elementoDelArreglo;
+  //});
+  //cb(sumar);
+//}
+
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
-  for (var i = 0; i < array.length; i++){
-    cb(array[i]);
-  }
+  //for (var i = 0; i < array.length; i++){
+    //cb(array[i]);
+  //}
+//}
+array.forEach(function(elemento){
+  cb(elemento)
+})
 }
 
 function map(array, cb) {
@@ -45,10 +57,16 @@ function map(array, cb) {
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
-  var nuevoArray = array.map(function(el){
-    return cb(el);
-  });
-  return nuevoArray;
+  //var nuevoArray = array.map(function(elemento){
+    //return cb(elemento);
+  //});
+  //return nuevoArray;
+//}
+var nuevoArray=[];
+for (var i = 0; i < array.length; i++){
+  nuevoArray.push(cb(array[i]));
+}
+return nuevoArray;
 }
 
 function filter(array) {
